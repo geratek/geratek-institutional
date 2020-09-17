@@ -1,0 +1,31 @@
+@import "node_modules/bulma/sass/utilities/initial-variables";
+
+// Initial variables
+$grey-darker-invert: #fff;
+$grey-darker: #2B2B2B;
+$red: #e80505;
+
+// Derived variables
+$link: $red;
+$primary: $grey-darker;
+$primary-invert: $grey-darker-invert;
+
+// Fonts
+$family-sans-serif: 'Open Sans', sans-serif;
+
+// Navbar
+$navbar-background-color: $primary;
+$navbar-height: 6.25rem;
+$navbar-item-color: $white;
+$navbar-item-hover-background-color: transparent;
+
+// Footer
+$footer-background-color: $white-bis;
+$footer-padding: 3rem 1.5rem 3rem;
+
+// Modal
+$modal-content-width: 1079px;
+$modal-card-head-radius: 0;
+$modal-card-head-border-bottom: none;
+
+@import "node_modules/bulma/bulma";

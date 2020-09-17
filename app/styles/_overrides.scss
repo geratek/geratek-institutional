@@ -1,0 +1,25 @@
+.glider {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-dot.active {
+    background-color: $red;
+  }
+
+  &-slide {
+    min-width: 130px;
+  }
+}
+
+.image {
+  &.is-200x200 {
+    height: 200px;
+    width: 200px;
+  }
+}

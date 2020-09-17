@@ -1,0 +1,383 @@
+@charset "utf-8";
+
+@import "./variables";
+@import "./helpers";
+@import "./overrides";
+// @import "./debug";
+
+html, body {
+  overflow-x: hidden;
+}
+
+.hero {
+  background: $primary center right / cover;
+
+  @include mobile {
+    background-image: url(../images/hero-mobile.png);
+  }
+
+  @include tablet-only {
+    background-image: url(../images/hero-tablet.png);
+  }
+
+  @include desktop {
+    background-image: url(../images/hero-desktop.png);
+  }
+
+  .title {
+    margin: 0 auto 40px;
+    max-width: 1080px;
+
+    @include desktop; @include tablet-only {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  .subtitle {
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  .subtitle > div {
+    display: -webkit-inline-box;
+    color: #00547a;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 0.2em 0.25em 0.2em 0.25em;
+  }
+
+  .hero-foot {
+    margin-bottom: 20px;
+  }
+}
+
+#services {
+  .big-text {
+    color: #BBBBBB;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 100px;
+
+    @include mobile {
+      font-size: 52px;
+      line-height: 70px;
+    }
+
+    &:after {
+      border-bottom: 3px solid $red;
+      content: "";
+      display: block;
+      left: 130px;
+      padding-top: 10px;
+      position: relative;
+      width: 120px;
+
+      @include mobile {
+        left: 25px;
+      }
+    }
+  }
+}
+
+#cases {
+  .tile {
+    .is-parent {
+      padding: 20px;
+    }
+
+    .case {
+      background-position: center;
+      background-position-y: top;
+      background-size: cover;
+      border: 1px solid #e5e5e5;
+      cursor: pointer;
+      height: 280px;
+      position: relative;
+
+      &::before {
+        content: '';
+        height: 100%;
+        mix-blend-mode: multiply;
+        opacity: .9;
+        position: absolute;
+        width: 100%;
+      }
+
+      &:hover {
+        background-size: 131%;
+
+        &::before {
+          background-color: $red;
+        }
+      }
+
+      .title {
+        color: $white;
+        font-size: 80px;
+        font-weight: 800;
+        left: 40px;
+        line-height: 109px;
+        position: absolute;
+        top: 40px;
+        width: 52%;
+      }
+    }
+  }
+}
+
+#technologies {
+  .columns {
+    @include desktop {
+      justify-content: center;
+    }
+  }
+
+  .technology {
+    margin: 0 auto;
+    max-width: 220px;
+    text-align: center;
+
+    .logo {
+      align-items: center;
+      display: flex;
+      height: 84px;
+      justify-content: center;
+      width: 84px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+#customers {
+  .customer-logo {
+    width: 200px;
+  }
+}
+
+#contact {
+  @include mobile {
+    padding-top: 0;
+  }
+}
+
+#github-geratek {
+  bottom: 60px;
+  height: 60px;
+  position: fixed;
+  right: 50px;
+  width: 60px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include mobile {
+    bottom: 20px;
+    height: 40px;
+    left: 20px;
+    opacity: .8;
+    right: auto;
+    width: 40px;
+  }
+}
+
+.footer {
+  margin-bottom: 110px;
+
+  figure {
+    display: flex;
+    align-items: center;
+
+    img {
+      padding-right: 20px;
+      border-right: 2px solid $red;
+
+      @include mobile {
+        width: 141px;
+      }
+    }
+
+    figcaption {
+      padding-left: 20px;
+    }
+  }
+
+  address {
+    font-size: 14px;
+  }
+}
+
+.title-mark {
+  @include desktop {
+    position: relative;
+
+    &:before {
+      background: $red;
+      content: "";
+      height: 3px;
+      left: 0;
+      margin-left: 20px;
+      position: absolute;
+      top: 50%;
+      width: 120px;
+    }
+  }
+}
+
+.project-card {
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 188px;
+  padding: 32px;
+}
+
+.modal {
+  &.project {
+    .modal-card {
+      max-width: calc(100vw - 60px);
+
+      &-head {
+        background-position-y: top !important;
+        background-position-x: center !important;
+        background-size: 100% !important;
+        background: $primary;
+        height: 200px;
+        padding: 0 20px;
+
+        .delete {
+          background: transparent;
+          position: absolute;
+          right: 14px;
+          top: 14px;
+        }
+
+        a {
+          bottom: 6px;
+          font-size: 14px;
+          left: 24px;
+          position: absolute;
+
+          @include mobile {
+            bottom: 25px;
+          }
+        }
+
+        @include mobile {
+          height: 140px;
+          padding: 0 20px;
+        }
+      }
+
+      &-title {
+        color: #b9b9b9;
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 109px;
+
+        @include mobile {
+          flex-shrink: initial;
+          font-size: 40px;
+          line-height: 54px;
+        }
+      }
+
+      &-body {
+        padding: 20px 40px 36px;
+
+        @include mobile {
+          padding: 20px 20px 30px;
+        }
+
+        .container {
+          margin: 29px auto;
+          max-width: 850px;
+        }
+
+        .image {
+          margin-left: 0;
+          margin-right: 0;
+
+          img {
+            border: 1px solid #e5e5e5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-size: 1rem;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 105%;
+
+  @include mobile {
+    width: 90px;
+    left: 105%;
+    font-size: 0.75rem;
+    top: 5px;
+  }
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#about {
+
+  .container {
+
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
+#about-founders {
+
+  p {
+    text-indent: 2em;
+  }
+
+  .modal-card-head {
+    height: auto;
+    background-color: rgba(232,5,5, .6);
+
+    .modal-card-title {
+      font-size: 50px;
+      color: white;
+
+      @include mobile {
+        font-size: 25px;
+      }
+    }
+  }
+}

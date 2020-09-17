@@ -1,0 +1,19 @@
+.button {
+  &.is-square {
+    border-radius: 0;
+  }
+
+  &.is-full-width-mobile {
+    @include mobile {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+.mx {
+  &-auto {
+    margin-right: auto!important;
+    margin-left: auto!important;
+  }
+}
