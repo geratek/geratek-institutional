@@ -381,3 +381,15 @@ html, body {
     }
   }
 }
+
+#customers {
+  .glider-contain {
+    .column {
+      text-align: center;
+
+      figure {
+        display: inline-block;
+      }
+    }
+  }
+}
