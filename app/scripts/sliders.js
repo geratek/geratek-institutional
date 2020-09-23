@@ -49,8 +49,7 @@ if (screen.width < desktop) {
   new Glider(
     $customers,
     getConfig({
-      slidesToShow: 3,
-      slidesToScroll: 1,
+      slidesToShow: 1,
       dots: '#customers .dots',
     })
   )

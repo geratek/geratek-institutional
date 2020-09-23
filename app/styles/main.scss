@@ -158,8 +158,29 @@ html, body {
 }
 
 #customers {
-  .customer-logo {
-    width: 200px;
+  .columns {
+    @include desktop {
+      justify-content: center;
+    }
+  }
+
+  .customer {
+    margin: 0 auto;
+    max-width: 220px;
+    text-align: center;
+
+    .logo {
+      align-items: center;
+      display: flex;
+      height: 90px;
+      justify-content: center;
+      width: 200px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
   }
 }
 
@@ -377,18 +398,6 @@ html, body {
 
       @include mobile {
         font-size: 25px;
-      }
-    }
-  }
-}
-
-#customers {
-  .glider-contain {
-    .column {
-      text-align: center;
-
-      figure {
-        display: inline-block;
       }
     }
   }
